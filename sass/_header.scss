@@ -1,0 +1,149 @@
+.header {
+	&-inner {
+		display: flex;
+		align-items: center;
+		padding: 40px 0;
+	}
+
+	&__contact {
+		font-size: 1.6rem;
+		color: $textColor;
+		margin-left: auto;
+		margin-right: 60px;
+
+		&-phone {
+			font-weight: 300;
+			margin-right: 12px;
+		}
+
+		&-number {
+			font-weight: 500;
+
+			a {
+				text-decoration: none;
+				color: $textColor;
+
+				&:hover {
+					text-decoration: underline;
+					color: $grayLight;
+				}
+			}
+		}
+	}
+
+	&__search {
+		margin-right: 58px;
+		cursor: pointer;
+		padding: 10px;
+		border-radius: 50%;
+		transform: translateY(2px);
+		line-height: 1;
+
+		&:hover {
+			background-color: #f7f7f7;
+		}
+
+		i {
+			font-size: 2.8rem;
+		}
+	}
+
+	&__menu {
+		cursor: pointer;
+		position: relative;
+
+		&-modal {
+			position: fixed;
+			inset: 0 0 0 auto;
+			background-color: $whiteColor;
+			transform: translateX(100%);
+			transition: transform ease-in-out 0.3s;
+			z-index: 10;
+
+			&.active {
+				transform: translateX(0);
+				box-shadow: -1px 0 30px rgba(0, 0, 0, 0.13);
+			}
+
+			.modal-closed {
+				text-align: right;
+				display: block;
+				color: $grayLight;
+				margin: 6px;
+
+				i {
+					font-size: 35px;
+					padding: 6px;
+					border-radius: 50%;
+					transition: all linear 0.2s;
+					cursor: pointer;
+
+					&:hover {
+						background-color: #f7f7f7;
+					}
+				}
+			}
+
+			.menu-list {
+				width: 300px;
+				padding-right: 20px;
+
+				&-item {
+					font-size: 1.6rem;
+					margin-bottom: 14px;
+					border-radius: 6px;
+					overflow: hidden;
+					transition: all linear 0.3s;
+
+					&:last-child {
+						padding: 0 10px;
+						color: $grayLight;
+					}
+
+					a {
+						text-decoration: none;
+						color: $grayLight;
+						padding: 14px 10px;
+						display: block;
+
+						&[href*="tel:"] {
+							display: inline-block;
+							color: $textColor;
+							font-weight: 500;
+
+							&:hover {
+								text-decoration: underline;
+								color: $grayLight;
+							}
+						}
+
+						&[href*="#"]:hover {
+							background-color: #4944f2;
+							color: $whiteColor;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@include maxw(739px) {
+		&-inner {
+			padding: 30px 0;
+		}
+
+		&__contact {
+			display: none;
+		}
+
+		&__search {
+			margin-left: auto;
+		}
+	}
+
+	@include maxw(480px) {
+		&__search {
+			margin-right: 30px;
+		}
+	}
+}

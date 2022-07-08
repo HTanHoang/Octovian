@@ -1,0 +1,62 @@
+.hero {
+	position: relative;
+	margin-bottom: 80px;
+
+	&__background {
+		margin-left: auto;
+		max-width: 68%;
+	}
+
+	&__content {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		color: $textColor;
+	}
+
+	&__caption {
+		font-size: 7.2rem;
+	}
+
+	&__title {
+		font-size: 15rem;
+		font-weight: 600;
+		line-height: 1;
+		margin-bottom: 40px;
+	}
+
+	&-link {
+		font-size: 1.8rem;
+		color: $grayLight;
+		font-weight: 500;
+	}
+
+	@include maxw(1023px) {
+		margin-bottom: 40px;
+
+		&__caption {
+			font-size: 4rem;
+		}
+
+		&__title {
+			font-size: 10rem;
+		}
+	}
+
+	@include maxw(739px) {
+		margin-bottom: 20px;
+
+		&__caption {
+			font-size: 2rem;
+		}
+
+		&__title {
+			font-size: 4rem;
+			margin-bottom: 20px;
+		}
+
+		&-link {
+			font-size: 1.8rem;
+		}
+	}
+}
